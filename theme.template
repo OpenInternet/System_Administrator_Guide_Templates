@@ -12,9 +12,6 @@ $if(title)$
 <header class="coverpage">
   <div class="covermiddle">
     <h1 class="bigtitle">$title$</h1>
-    $if(subtitle)$
-    <h2 class="subtitle">$subtitle$</h1>
-    $endif$
     $for(author)$
     <p class="author">$author.name$</p>
     $endfor$
