@@ -1,0 +1,24 @@
+
+{% macro index(section) %}
+* {{ _(section.best_practices['SectionTitle']) }}(#{{ section['best_practices']['UUID'] }})
+    {% for bp_sub in sorted(section['best_practices']['Sections'], key=lambda item: item['weight'])  %}
+    {% loop['depth'] %}. [{{ _(bp_sub['SectionTitle']) }}](#{{ bp_sub.UUID }})
+    {% endfor %}
+* {{ _(section['tools_and_templates']['SectionTitle']) }}(#{{ section['tools_and_templates']['UUID'] }})
+* {{ _(section['recommended_reading']['SectionTitle']) }}(#{{ section['recommended_reading']['UUID'] }})
+* {{ _(section['chapter_references']['SectionTitle']) }}(#{{ section['chapter_references']['UUID'] }})
+{% endmacro %}
+
+{% macro subsection(section) %}
+#### {% _(section['SectionTitle']) %} {#{{ section['UUID'] }}}
+
+{% _(section['content']) %}
+
+{% endmacro %}
+
+{% macro bp_subsection(section) %}
+##### {% _(section['SectionTitle']) %} {#{{ section['UUID'] }}}
+
+{% _(section['content']) %}
+
+{% endmacro %}

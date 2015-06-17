@@ -1,0 +1,39 @@
+{# This is a jinja template that outputs translated markdown #}
+{% import 'best_practice.jinja' as best_practice %}
+{% import 'scenarios.jinja' as scenarios %}
+
+{# Our default content is in english. This is what we will translate from. #}
+{% set content = sources['sysAdmin']['en'] %}
+
+# {{ _(content['Title']) }}
+
+{% include 'front_matter.jinja' %}
+
+## {{ _('Part A: Best Practices') }}
+
+{# Iterate through all best practices to find the list of practices #}
+{% for section in content['best_practices'] %}
+### {{ _(section['SectionTitle']) }}
+
+{{ best_practice.index(section) }}
+
+{{ _(section['Introduction']) }}
+
+#### {% _(section['best_practices']['SectionTitle']) %} {#{{ section['best_practices']['UUID'] }}}
+
+          {% for bp_sub in sorted(section['best_practices']['Sections'], key=lambda item: item['weight'])  %}
+              {{ best_practice.bp_subsection(bp_sub) }}
+          {% endfor %}
+
+      {{ best_practice.subsection(section['tools_and_templates']) }}
+      {{ best_practice.subsection(section['recommended_reading']) }}
+      {{ best_practice.subsection(section['chapter_references']) }}
+{% endfor %}
+
+## {{ _('Part B: Scenarios') }}
+
+{% for section in content.scenarios %}
+      {{ scenarios(section) }}
+{% endfor %}
+
+{% include 'back_matter.jinja' %}
