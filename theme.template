@@ -12,15 +12,12 @@ $if(title)$
 <header class="coverpage">
   <div class="covermiddle">
     <h1 class="bigtitle">$title$</h1>
-    $for(author)$
-    <p class="author">$author.name$</p>
-    $endfor$
     $if(date)$
     <h3 class="date">$date$</h3>
     $endif$
   </div>
   <div class="coverbottom">
-    <img class="inlogo" src="./theme/internews_logo.svg" alt="Internews Logo" />
+    <img class="inlogo" src="../theme/internews_logo.svg" alt="Internews Logo" />
   </div>
 </header>
 $endif$
