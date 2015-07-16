@@ -1,6 +1,10 @@
-# System_Administrator_Guide_Templates
+# Templates for styling the [Guide for System Administrators in At‐Risk Organizations](https://github.com/OpenInternet/System_Administrator_Guide_Text)
 
-Publication templates for the System Administrator Guide
+## License
+
+The **Templates for System Administrators in At‐Risk Organizations** is available under a Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0) License
+
+These templates may be used and shared for educational, non-commercial, not-for-profit purposes, with attribution to Internews. Users are free to modify and distribute content under conditions listed in the license.
 
 # Building the System Administrator Guide PDF
 
@@ -10,9 +14,9 @@ Publication templates for the System Administrator Guide
 sudo apt-get install git
 ```
 
-### Install [pretty markdown to pdf](https://github.com/elationfoundation/pretty_md2pdf)
+### Install the [Documentation Builder](https://github.com/OpenInternet/Documentation-Builder.git)
 
-[Use the installation instructions found here.](https://github.com/elationfoundation/pretty_md2pdf/blob/master/docs/INSTALL.md)
+[Use the installation instructions found here.](https://github.com/OpenInternet/Documentation-Builder/blob/master/docs/INSTALL.md)
 
 ### Download the [System Administrator Guide Text](https://github.com/OpenInternet/System_Administrator_Guide_Text)
 
@@ -31,5 +35,6 @@ cd ..
 ### Create the System Administrator Guide
 
 ```
-./pretty_md2pdf/builddoc -i System_Administrator_Guide_Text/en/ -t System_Administrator_Guide_Templates/ -o SysAdminGuide.pdf
+cd /path/to/documentation/builder/
+./builddoc  -i path/to/System_Administrator_Guide_Text/en -t /path/to/System_Administrator_Guide_Templates/ -o output_filename.pdf
 ```
