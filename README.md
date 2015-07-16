@@ -6,7 +6,7 @@ The **Templates for System Administrators in At‐Risk Organizations** is availa
 
 These templates may be used and shared for educational, non-commercial, not-for-profit purposes, with attribution to Internews. Users are free to modify and distribute content under conditions listed in the license.
 
-# Building the System Administrator Guide PDF
+# Building the System Administrator Guide PDF using these templates
 
 ### Install Git
 
